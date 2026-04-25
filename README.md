@@ -49,11 +49,11 @@ classDiagram
 
 ## Instrucciones para el Estudiante:
 1.  **Crea tu propia rama:** `feature/practica-[TuNombre]`.
-2.  **Entidad:** Crea las clases en el paquete `com.uniajc.modelo` para las entidades restantes.
-3.  **DAO:** Implementa la persistencia en `com.uniajc.modelo` usando JDBC y `ConexionDatabase`.
-4.  **Servicio:** Agrega la lógica de negocio (validaciones de integridad).
-5.  **Vistas:** Implementa interfaces tanto para Scanner como para Swing.
-6.  **Pruebas:** Asegúrate de que tu código pase los tests de validación del docente.
+2.  **Entidad:** Se craron las clases en el paquete `com.uniajc.modelo` para las entidades restantes.
+3.  **DAO:** Se implementa la persistencia en `com.uniajc.modelo` usando JDBC y `ConexionDatabase`.
+4.  **Servicio:** Se agrega la lógica de negocio (validaciones de integridad).
+5.  **Vistas:** se implementa interfaces tanto para Scanner como para Swing.
+6.  **Pruebas:** 
 
 ## Configuración de BD:
 Usa el archivo `config.properties` en la raíz para configurar tu conexión a MySQL, Postgres (Neon) o SQLite local.
