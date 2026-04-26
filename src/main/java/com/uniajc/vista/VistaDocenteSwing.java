@@ -49,6 +49,6 @@ public class VistaDocenteSwing implements DocenteView {
 
     @Override
     public void mostrarMensaje(String mensaje) {
-        JOptionPane.showMessageDialog(null, mensaje, "Información", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, mensaje, "Informacion", JOptionPane.INFORMATION_MESSAGE);
     }
 }

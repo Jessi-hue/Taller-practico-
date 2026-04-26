@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import com.uniajc.modelo.Estudiante;
 
-public class VistaEstudiante {
+public class VistaEstudiante implements EstudianteView {
 
     private Scanner scanner;
 
@@ -17,14 +17,14 @@ public class VistaEstudiante {
 
         System.out.println("Registrando los datos del estudiante...");
 
-        System.out.println("Ingrese el nombre del estudiante:");
-        String nombre = scanner.nextLine();
+        System.out.print("Ingrese el nombre del estudiante: ");
+        String nombre = scanner.nextLine().trim();
 
-        System.out.println("Ingrese el apellido del estudiante:");
-        String apellido = scanner.nextLine();
+        System.out.print("Ingrese el apellido del estudiante: ");
+        String apellido = scanner.nextLine().trim();
 
-        System.out.println("Ingrese el correo del estudiante:");
-        String correo = scanner.nextLine();
+        System.out.print("Ingrese el correo del estudiante: ");
+        String correo = scanner.nextLine().trim();
 
         return new Estudiante(0, nombre, apellido, correo);
     }
@@ -39,6 +39,10 @@ public class VistaEstudiante {
 
     public void mostrarTodosLosEstudiantes(List<Estudiante> estudiantes) {
         System.out.println("Lista de Estudiantes: ");
+        if (estudiantes == null || estudiantes.isEmpty()) {
+            System.out.println("No hay estudiantes registrados.");
+            return;
+        }
         for (Estudiante estudiante : estudiantes) {
             mostrarDetallesEstudiante(estudiante);
         }

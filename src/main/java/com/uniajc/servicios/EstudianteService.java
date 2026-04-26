@@ -19,9 +19,21 @@ public class EstudianteService {
             throw new IllegalArgumentException("El estudiante no puede ser nulo.");
         }
 
-        if (estudiante.getNombre() == null || estudiante.getApellido() == null) {
-            throw new IllegalArgumentException("Los campos nombre y apellido del estudiante son obligatorios.");
+        if (estudiante.getNombre() == null || estudiante.getNombre().trim().isEmpty()) {
+            throw new IllegalArgumentException("El nombre del estudiante es obligatorio.");
         }
+
+        if (estudiante.getApellido() == null || estudiante.getApellido().trim().isEmpty()) {
+            throw new IllegalArgumentException("El apellido del estudiante es obligatorio.");
+        }
+
+        if (estudiante.getCorreo() == null || estudiante.getCorreo().trim().isEmpty()) {
+            throw new IllegalArgumentException("El correo del estudiante es obligatorio.");
+        }
+
+        estudiante.setNombre(estudiante.getNombre().trim());
+        estudiante.setApellido(estudiante.getApellido().trim());
+        estudiante.setCorreo(estudiante.getCorreo().trim());
 
         estudianteDao.guardarEstudiante(estudiante);
     }
