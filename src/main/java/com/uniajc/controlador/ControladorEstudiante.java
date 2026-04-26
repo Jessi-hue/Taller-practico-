@@ -1,34 +1,32 @@
 package com.uniajc.controlador;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.uniajc.modelo.Estudiante;
 import com.uniajc.servicios.EstudianteService;
-import com.uniajc.vista.VistaEstudiante;
+import com.uniajc.vista.EstudianteView;
 
 public class ControladorEstudiante {
 
-    private VistaEstudiante vistaEstudiante;
-    private EstudianteService estudianteService;
+    private final EstudianteView vistaEstudiante;
+    private final EstudianteService estudianteService;
 
-    public ControladorEstudiante(VistaEstudiante vistaEstudiante, EstudianteService estudianteService) {
+    public ControladorEstudiante(EstudianteView vistaEstudiante, EstudianteService estudianteService) {
         this.vistaEstudiante = vistaEstudiante;
         this.estudianteService = estudianteService;
     }
 
     public void registrarEstudiante() {
-        // Lógica para registrar un estudiante
-
         Estudiante nuevoEstudiante = vistaEstudiante.solicitarDatosEstudiante();
 
+        if (nuevoEstudiante == null) {
+            vistaEstudiante.mostrarMensaje("Registro cancelado.");
+            return;
+        }
+
         estudianteService.registrarEstudiante(nuevoEstudiante);
-        vistaEstudiante.mostrarMensaje("Estudiante registrado exitosamente.");       
+        vistaEstudiante.mostrarMensaje("Estudiante registrado exitosamente.");
     }
 
     public void mostrarTodosLosEstudiantes() {
-        // Lógica para mostrar todos los estudiantes
         vistaEstudiante.mostrarTodosLosEstudiantes(estudianteService.mostrarTodosLosEstudiantes());
     }
-
 }
