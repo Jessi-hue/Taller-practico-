@@ -1,5 +1,5 @@
 # PRÁCTICA ACADÉMICA - SISTEMA DE GESTIÓN UNIAJC (MVC + DB)
-
+## Integrantes: Angie Herrera y Jessica Canchala
 ## Objetivo
 Replicar el ecosistema académico propuesto en el diagrama Mermaid, siguiendo los estándares de arquitectura en capas (Entidad, DAO, Service, Controller, Vista).
 
